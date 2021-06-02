@@ -13,7 +13,8 @@ COPY package*.json ./
 RUN apk -U add curl jq bash nodejs nodejs-npm python3 py3-pip && \
   pip3 install awscli netaddr && \
   npm install && apk del --purge nodejs-npm && \
-  rm -rvf /var/cache/* /root/.npm /tmp/*
+  rm -rvf /var/cache/* /root/.npm /tmp/* && \
+  echo "Hello world!"
 
 # copy the code
 COPY . .
